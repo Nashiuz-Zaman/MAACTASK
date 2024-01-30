@@ -1,5 +1,17 @@
 @use "./../tools" as i;
 
+%text-textPrimary {
+  color: i.$textPrimary;
+}
+
 %text-primary {
   color: i.$primary;
+}
+
+%bg-primary {
+  background-color: i.$primary;
+}
+
+%border-primary {
+  border-color: i.$primary;
 }
