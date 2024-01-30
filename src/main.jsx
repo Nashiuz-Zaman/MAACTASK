@@ -9,7 +9,7 @@ import { RouterProvider } from "react-router-dom";
 import router from "./router/router";
 
 // style import
-import "./sass/main.scss";
+import "./sass/styles.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

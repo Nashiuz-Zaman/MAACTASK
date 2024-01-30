@@ -3,6 +3,10 @@
   height: 100%;
 }
 
-@mixin wide-screen {
+@mixin widescreen {
   aspect-ratio: 16/9;
+}
+
+@mixin square() {
+  aspect-ratio: 1/1;
 }

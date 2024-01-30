@@ -1,0 +1,42 @@
+//flex mixins
+@mixin flex-row($justify: flex-start, $align: normal) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-row-rev($justify: flex-start, $align: normal) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-col($justify: flex-start, $align: normal) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-col-rev($justify: flex-start, $align: normal) {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-row-center() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-col-center() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
