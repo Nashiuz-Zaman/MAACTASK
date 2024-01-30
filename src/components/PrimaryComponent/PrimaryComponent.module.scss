@@ -1,0 +1,10 @@
+@use "./../../sass/main.scss";
+@use "./../../sass/tools" as i;
+
+.primary-component {
+  @extend %min-h-screen;
+  @extend %flex-col;
+  @include i.max-w(120rem);
+  @extend %overflow-x-hidden;
+  @extend %mx-auto;
+}
