@@ -1,12 +1,15 @@
-@mixin same-size() {
+%same-width {
   width: 100%;
+}
+
+%same-height {
   height: 100%;
 }
 
-@mixin widescreen {
+%widescreen {
   aspect-ratio: 16/9;
 }
 
-@mixin square() {
+%square {
   aspect-ratio: 1/1;
 }

@@ -1,0 +1,10 @@
+@use "./tools" as i;
+@use "./modules/base";
+@use "./modules/font-face";
+@use "./placeholders/index";
+
+.box {
+  border: 1px solid black;
+  width: 50%;
+  @extend %square;
+}

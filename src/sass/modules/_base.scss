@@ -1,11 +1,11 @@
 @use "./../tools" as i;
+@use "./../placeholders/index";
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  @extend %no-space;
 }
 
 html {

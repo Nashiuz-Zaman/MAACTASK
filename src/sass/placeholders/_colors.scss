@@ -1,0 +1,5 @@
+@use "./../tools" as i;
+
+%text-primary {
+  color: i.$primary;
+}
