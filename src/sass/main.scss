@@ -1,0 +1,49 @@
+@use "./index" as i;
+@use "./modules/base";
+@use "./modules/button";
+@use "./modules/list";
+
+// font
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+// button {
+//   @include t.button-reset();
+
+//   &:disabled {
+//     cursor: default !important;
+//   }
+// }
+
+img {
+  @include i.img-default();
+}
+
+@media (max-width: 23em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 22.5em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 20em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+.red {
+  color: red;
+
+  @include i.screen2xsm() {
+    color: blue;
+  }
+}
+
+.box {
+  box-shadow: i.$shadowPrimary;
+}

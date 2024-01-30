@@ -1,0 +1,28 @@
+@use "./../index" as i;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  @include i.no-spacing;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  line-height: 1;
+  max-width: 120rem;
+  font-weight: 400;
+  color: i.$textMediumLight;
+  font-family: i.$defaultFont;
+  // margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a:link,
+a:visited {
+  @include i.link-reset();
+}

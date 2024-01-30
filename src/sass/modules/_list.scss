@@ -1,0 +1,6 @@
+@use "./../index" as i;
+
+ul,
+ol {
+  @include i.list-reset();
+}
