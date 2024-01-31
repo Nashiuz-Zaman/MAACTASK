@@ -177,3 +177,43 @@
     @warn "Invalid argument";
   }
 }
+
+@mixin space-y($size) {
+  $margin: 0;
+
+  @if type-of($size) == number {
+    $margin: #{math.div($size * 4, 16)}rem;
+  } @else if type-of($size) == string {
+    $margin: #{$size};
+  } @else {
+    @warn "Invalid argument";
+  }
+
+  > * {
+    margin-bottom: $margin;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin space-x($size) {
+  $margin: 0;
+
+  @if type-of($size) == number {
+    $margin: #{math.div($size * 4, 16)}rem;
+  } @else if type-of($size) == string {
+    $margin: #{$size};
+  } @else {
+    @warn "Invalid argument";
+  }
+
+  > * {
+    margin-right: $margin;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
