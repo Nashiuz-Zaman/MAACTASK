@@ -1,0 +1,10 @@
+@use "./../tools" as i;
+
+%body-default {
+  @include i.leading(1);
+  @include i.max-w(120rem);
+  font-weight: 400;
+  color: i.$textMediumLight;
+  font-family: i.$defaultFont;
+  overflow-x: hidden;
+}
