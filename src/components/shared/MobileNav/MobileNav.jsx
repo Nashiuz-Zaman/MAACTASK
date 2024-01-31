@@ -41,7 +41,7 @@ const MobileNav = ({ modifyClasses = "" }) => {
 
   // one single place for the link classes
   const linkClasses =
-    "leading-[normal] px-2 py-1 rounded-default text-white hover:text-primaryLightest font-medium transition-all duration-200";
+    "  hover:text-primaryLightest font-medium transition-all duration-200";
 
   return (
     //  mobile nav starts here
@@ -60,7 +60,7 @@ const MobileNav = ({ modifyClasses = "" }) => {
         <BrandLogo imageSource={brandlogo} modifyClasses={`mx-auto`} />
 
         {/* regular part */}
-        <ul className="flex flex-col gap-3">
+        <ul className={styles["mobile-nav-container__nav__list"]}>
           {/* this part will be always shown */}
           {navOptions &&
             navOptions.map((option) => {
@@ -70,7 +70,12 @@ const MobileNav = ({ modifyClasses = "" }) => {
               if (option.hashed) {
                 return (
                   <li key={option.id} onClick={closeMobileNav}>
-                    <HashLink className={linkClasses} to={option.url}>
+                    <HashLink
+                      className={
+                        styles["mobile-nav-container__nav__list__link"]
+                      }
+                      to={option.url}
+                    >
                       {option.text}
                     </HashLink>
                   </li>
@@ -80,7 +85,10 @@ const MobileNav = ({ modifyClasses = "" }) => {
               // normal link
               return (
                 <li key={option.id} onClick={closeMobileNav}>
-                  <NavLink className={linkClasses} to={option.url}>
+                  <NavLink
+                    className={styles["mobile-nav-container__nav__list__link"]}
+                    to={option.url}
+                  >
                     {option.text}
                   </NavLink>
                 </li>

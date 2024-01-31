@@ -28,6 +28,23 @@
     @include i.screenMd() {
       @include i.w("40%");
     }
+
+    &__list {
+      @extend %flex-col;
+      @extend %items-center;
+      @include i.gap(3);
+      @include i.mt(5);
+
+      &__link {
+        &:link,
+        &:visited {
+          @include i.px(2);
+          @include i.py(1);
+          @extend %font-medium;
+          @extend %text-primary;
+        }
+      }
+    }
   }
 }
 
