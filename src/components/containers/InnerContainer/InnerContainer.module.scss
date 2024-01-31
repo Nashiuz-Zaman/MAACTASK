@@ -3,7 +3,7 @@
 
 .inner-container {
   @include i.px(3);
-  @include i.py(5);
+
   @include i.max-w("90rem");
   width: 100%;
   @extend %mx-auto;

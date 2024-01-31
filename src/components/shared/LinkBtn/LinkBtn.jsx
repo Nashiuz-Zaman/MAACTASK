@@ -16,6 +16,7 @@ const LinkBtn = ({
   modifyClasses = "",
   sizeTheme = "base",
 }) => {
+  // common classes
   const colorClasses =
     colorTheme === "primary"
       ? styles["primary-btn"]

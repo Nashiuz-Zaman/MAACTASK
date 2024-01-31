@@ -1,7 +1,17 @@
-import InnerContainer from "../../containers/InnerContainer/InnerContainer";
+// component
+import InnerContainer from "./../../containers/InnerContainer/InnerContainer";
+import Banner from "./Banner/Banner";
 
 const Home = () => {
-  return <div className="red box"></div>;
+  return (
+    <div>
+      <section>
+        <InnerContainer>
+          <Banner />
+        </InnerContainer>
+      </section>
+    </div>
+  );
 };
 
 export default Home;

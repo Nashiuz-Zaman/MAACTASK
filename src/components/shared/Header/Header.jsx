@@ -6,10 +6,6 @@ import BrandLogo from "./../BrandLogo/BrandLogo";
 import InnerContainer from "../../containers/InnerContainer/InnerContainer";
 import MobileNav from "./../MobileNav/MobileNav";
 import LinkBtn from "../LinkBtn/LinkBtn";
-import LoadingSpinner from "./../LoadingSpinner/LoadingSpinner";
-
-// redux
-import { useSelector } from "react-redux";
 
 // data
 import brandlogo from "./../../../assets/websiteLogo/brandlogo.svg";
@@ -19,9 +15,6 @@ import { navOptions } from "../../../interfaceData/navigationOptions";
 import styles from "./Header.module.scss";
 
 const Header = ({ modifyClasses = "" }) => {
-  // extract user from auth
-  const { profileData, appLoading } = useSelector((store) => store.auth);
-
   return (
     <header className={`${styles["header"]} ${modifyClasses}`}>
       <InnerContainer>
@@ -32,14 +25,7 @@ const Header = ({ modifyClasses = "" }) => {
           {/* auth related options login/logout etc */}
           <div className={styles["header__container__btn-container"]}>
             {navOptions.map((option) => {
-              return (
-                <LinkBtn
-                  colorTheme={option.colorTheme}
-                  key={option.id}
-                  text={option.text}
-                  url={option.url}
-                />
-              );
+              return <LinkBtn key={option.id} {...option} />;
             })}
           </div>
 

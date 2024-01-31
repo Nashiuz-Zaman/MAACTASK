@@ -3,6 +3,7 @@
 
 .header {
   @include i.border-b($color: #c2d2eb);
+  @include i.py(5);
 
   &__container {
     @extend %flex-row, %justify-between, %items-center;
