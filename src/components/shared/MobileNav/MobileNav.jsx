@@ -26,6 +26,9 @@ import { navOptions } from "../../../interfaceData/navigationOptions";
 // logo import
 import brandlogo from "./../../../assets/websiteLogo/brandlogo.svg";
 
+// styles
+import styles from "./MobileNav.module.scss";
+
 const MobileNav = ({ modifyClasses = "" }) => {
   // extract mobile nav functionality
   const { mobileNavOpen, openMobileNav, closeMobileNav } =
@@ -42,22 +45,19 @@ const MobileNav = ({ modifyClasses = "" }) => {
 
   return (
     //  mobile nav starts here
-    <div>
+    <div className={styles["mobile-nav-container"]}>
       <MobileMenuBtn openNavFunction={openMobileNav} />
 
       <nav
-        className={`block h-screen fixed top-0 right-0 w-full sm:w-[50%] md:w-[40%] lg:w-[35%] 2xl:w-[20%] translate-x-full origin-center transition-all duration-default z-40 ${
-          mobileNavOpen ? "!translate-x-0" : ""
-        } p-8 bg-gradient-to-br from-primaryDark to bg-primary ${modifyClasses}`}
+        className={`${styles["mobile-nav-container__nav"]} ${
+          mobileNavOpen ? styles["open"] : ""
+        } ${modifyClasses}`}
       >
         {/* X cross button to close nav */}
         <MobileMenuCloseBtn clickHandler={closeMobileNav} />
 
         {/* brand logo part */}
-        <BrandLogo
-          imageSource={brandlogo}
-          modifyClasses="block w-max mr-auto mb-10"
-        />
+        <BrandLogo imageSource={brandlogo} />
 
         {/* regular part */}
         <ul className="flex flex-col gap-3">

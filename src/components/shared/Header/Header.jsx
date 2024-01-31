@@ -41,10 +41,10 @@ const Header = ({ modifyClasses = "" }) => {
                 />
               );
             })}
-
-            {/* mobile nav button and mobile nav menu */}
-            {/* <MobileNav /> */}
           </div>
+
+          {/* mobile nav button and mobile nav menu */}
+          <MobileNav />
         </div>
       </InnerContainer>
     </header>

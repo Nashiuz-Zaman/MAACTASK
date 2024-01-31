@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 // icon
 import { IoIosMenu } from "react-icons/io";
 
+// styles
+import styles from "./MobileMenuBtn.module.scss";
+
 const MobileMenuBtn = ({ openNavFunction, modifyClasses = "" }) => {
   return (
     <button
