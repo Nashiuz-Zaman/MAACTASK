@@ -1,0 +1,32 @@
+@use "./../tools" as i;
+@use "./../placeholders/index";
+
+ul,
+ol {
+  list-style-type: none;
+  @extend %no-space;
+}
+
+button {
+  @extend %block;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+}
+
+img {
+  @extend %block;
+  @extend %w-full;
+}
+
+a {
+  &:link,
+  &:visited {
+    @extend %block;
+    text-decoration: none;
+    @extend %text-textPrimary;
+  }
+}

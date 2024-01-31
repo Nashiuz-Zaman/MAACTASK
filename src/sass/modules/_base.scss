@@ -1,10 +1,10 @@
-@use "./../index" as i;
+@use "./../placeholders/index";
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  @include i.no-spacing;
+  @extend %no-space;
 }
 
 html {
@@ -13,16 +13,5 @@ html {
 }
 
 body {
-  line-height: 1;
-  max-width: 120rem;
-  font-weight: 400;
-  color: i.$textMediumLight;
-  font-family: i.$defaultFont;
-  // margin: 0 auto;
-  overflow-x: hidden;
-}
-
-a:link,
-a:visited {
-  @include i.link-reset();
+  @extend %body-default;
 }

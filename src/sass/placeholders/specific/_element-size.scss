@@ -1,0 +1,23 @@
+%w-full {
+  width: 100%;
+}
+
+%h-full {
+  height: 100%;
+}
+
+%widescreen {
+  aspect-ratio: 16/9;
+}
+
+%square {
+  aspect-ratio: 1/1;
+}
+
+%min-h-screen {
+  min-height: 100vh;
+}
+
+%w-max {
+  width: max-content;
+}

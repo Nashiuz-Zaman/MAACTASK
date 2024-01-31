@@ -1,0 +1,25 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.inner-container {
+  @extend %w-full;
+  @include i.px(3);
+  border: 1px solid black;
+
+  @include i.screenXsm() {
+    @include i.px(6);
+  }
+
+  @include i.screenMd() {
+    @include i.px(8);
+  }
+
+  @include i.screenLg() {
+    @include i.px(12);
+  }
+
+  @include i.screenXl() {
+    @include i.px(28);
+    @include i.py(5);
+  }
+}

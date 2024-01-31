@@ -2,17 +2,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// react router import
-import { RouterProvider } from "react-router-dom";
-
-// router import
-import router from "./router/router";
+// primary component
+import PrimaryComponent from "./components/PrimaryComponent/PrimaryComponent";
 
 // style import
 import "./sass/main.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <PrimaryComponent />
   </React.StrictMode>
 );
