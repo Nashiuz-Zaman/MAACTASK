@@ -19,7 +19,7 @@ button {
 
 img {
   @extend %block;
-  @extend %same-width;
+  @extend %w-full;
 }
 
 a {
