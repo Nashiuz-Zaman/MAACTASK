@@ -1,0 +1,86 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.button-btn-container {
+  button {
+    @extend %transition-all,
+      %rounded-default,
+      %duration-default,
+      %text-center,
+      %relative;
+  }
+}
+
+.primary {
+  button {
+    background-color: i.$primary;
+    color: i.$white;
+
+    &:hover {
+      background-color: i.$primaryDark;
+    }
+  }
+}
+
+.primary-alt {
+  button {
+    background-color: #f0f6ff;
+    color: i.$primary;
+
+    &:hover {
+      background-color: i.$lightGray;
+    }
+  }
+}
+
+.base {
+  button {
+    @include i.px(6);
+    @include i.py(3);
+    @extend %text-sm, %font-medium;
+    line-height: 150%;
+  }
+}
+
+.lg {
+  button {
+    @include i.px(12);
+    @include i.py(6);
+    @extend %text-xl, %font-extrabold;
+    line-height: 130%;
+  }
+}
+
+.primary-alt {
+  button {
+    &::before {
+      @extend %pseudo-reset;
+      @extend %absolute;
+      @extend %w-full;
+      @extend %h-full;
+      @extend %bg-primary;
+      @extend %rounded-default;
+      z-index: -1;
+    }
+  }
+
+  &.base {
+    button {
+      @include i.border($color: i.$primary);
+      &::before {
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
+
+  &.lg {
+    button {
+      @include i.border($size: 2px, $color: i.$primary);
+      &::before {
+        top: 6px;
+        left: 6px;
+      }
+    }
+  }
+}

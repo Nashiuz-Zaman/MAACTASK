@@ -1,0 +1,54 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.mobile-nav-container {
+  // hide when screen size is lg = 1024
+  @include i.screenLg() {
+    display: none;
+  }
+
+  &__nav {
+    @extend %h-screen,
+      %fixed,
+      %top-right,
+      %w-full,
+      %transition-all,
+      %duration-default,
+      %bg-white;
+
+    z-index: 40;
+
+    @include i.p(8);
+    transform: translateX(100%);
+
+    @include i.screenSm() {
+      @include i.w("50%");
+    }
+
+    @include i.screenMd() {
+      @include i.w("40%");
+    }
+
+    &__list {
+      @extend %flex-col;
+      @extend %items-center;
+      @include i.gap(3);
+      @include i.mt(5);
+
+      &__link {
+        &:link,
+        &:visited {
+          @include i.px(2);
+          @include i.py(1);
+          @extend %font-medium;
+          @extend %text-primary;
+        }
+      }
+    }
+  }
+}
+
+.open {
+  transform: translateX(0);
+  @extend %shadow-medium;
+}

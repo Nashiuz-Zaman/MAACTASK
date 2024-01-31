@@ -14,8 +14,13 @@
 }
 
 .base-btn {
-  @include i.px(6);
-  @include i.py(3);
+  &:link,
+  &:visited {
+    @include i.px(6);
+    @include i.py(3);
+    @extend %text-sm, %font-medium;
+    line-height: 150%;
+  }
 }
 
 .primary-btn {

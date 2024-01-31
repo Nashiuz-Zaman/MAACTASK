@@ -4,13 +4,16 @@ import PropTypes from "prop-types";
 // icon
 import { IoIosMenu } from "react-icons/io";
 
+// styles
+import styles from "./MobileMenuBtn.module.scss";
+
 const MobileMenuBtn = ({ openNavFunction, modifyClasses = "" }) => {
   return (
     <button
-      className={`block w-max  ${modifyClasses}`}
+      className={`${styles["mobile-menu-btn"]} ${modifyClasses}`}
       onClick={openNavFunction}
     >
-      <IoIosMenu className="text-4xl text-black"></IoIosMenu>
+      <IoIosMenu className={styles["mobile-menu-btn__icon"]}></IoIosMenu>
     </button>
   );
 };

@@ -1,0 +1,10 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.mobile-menu-btn {
+  @extend %ml-auto;
+
+  &__icon {
+    @extend %text-3xl, %text-primary;
+  }
+}

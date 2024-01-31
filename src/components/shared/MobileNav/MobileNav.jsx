@@ -26,6 +26,9 @@ import { navOptions } from "../../../interfaceData/navigationOptions";
 // logo import
 import brandlogo from "./../../../assets/websiteLogo/brandlogo.svg";
 
+// styles
+import styles from "./MobileNav.module.scss";
+
 const MobileNav = ({ modifyClasses = "" }) => {
   // extract mobile nav functionality
   const { mobileNavOpen, openMobileNav, closeMobileNav } =
@@ -36,31 +39,24 @@ const MobileNav = ({ modifyClasses = "" }) => {
   // add escape key close functionality
   useEscapeClose(closeMobileNav);
 
-  // one single place for the link classes
-  const linkClasses =
-    "leading-[normal] px-2 py-1 rounded-default text-white hover:text-primaryLightest font-medium transition-all duration-200";
-
   return (
     //  mobile nav starts here
-    <div>
+    <div className={styles["mobile-nav-container"]}>
       <MobileMenuBtn openNavFunction={openMobileNav} />
 
       <nav
-        className={`block h-screen fixed top-0 right-0 w-full sm:w-[50%] md:w-[40%] lg:w-[35%] 2xl:w-[20%] translate-x-full origin-center transition-all duration-default z-40 ${
-          mobileNavOpen ? "!translate-x-0" : ""
-        } p-8 bg-gradient-to-br from-primaryDark to bg-primary ${modifyClasses}`}
+        className={`${styles["mobile-nav-container__nav"]} ${
+          mobileNavOpen ? styles["open"] : ""
+        } ${modifyClasses}`}
       >
         {/* X cross button to close nav */}
         <MobileMenuCloseBtn clickHandler={closeMobileNav} />
 
         {/* brand logo part */}
-        <BrandLogo
-          imageSource={brandlogo}
-          modifyClasses="block w-max mr-auto mb-10"
-        />
+        <BrandLogo imageSource={brandlogo} modifyClasses={`mx-auto`} />
 
         {/* regular part */}
-        <ul className="flex flex-col gap-3">
+        <ul className={styles["mobile-nav-container__nav__list"]}>
           {/* this part will be always shown */}
           {navOptions &&
             navOptions.map((option) => {
@@ -70,7 +66,12 @@ const MobileNav = ({ modifyClasses = "" }) => {
               if (option.hashed) {
                 return (
                   <li key={option.id} onClick={closeMobileNav}>
-                    <HashLink className={linkClasses} to={option.url}>
+                    <HashLink
+                      className={
+                        styles["mobile-nav-container__nav__list__link"]
+                      }
+                      to={option.url}
+                    >
                       {option.text}
                     </HashLink>
                   </li>
@@ -80,7 +81,10 @@ const MobileNav = ({ modifyClasses = "" }) => {
               // normal link
               return (
                 <li key={option.id} onClick={closeMobileNav}>
-                  <NavLink className={linkClasses} to={option.url}>
+                  <NavLink
+                    className={styles["mobile-nav-container__nav__list__link"]}
+                    to={option.url}
+                  >
                     {option.text}
                   </NavLink>
                 </li>

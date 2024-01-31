@@ -1,0 +1,16 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.banner-text {
+  @include i.space-y(12);
+
+  &__heading {
+    @include i.leading(130%);
+    @extend %font-extrabold, %text-6xl, %text-textPrimary, %text-center;
+  }
+
+  &__btn-container {
+    @extend %mx-auto, %w-max, %flex-row;
+    @include i.space-x(6);
+  }
+}

@@ -3,13 +3,19 @@
 
 .header {
   @include i.border-b($color: #c2d2eb);
+  @include i.py(5);
 
   &__container {
     @extend %flex-row, %justify-between, %items-center;
 
     &__btn-container {
-      @extend %flex-row;
+      @extend %hidden;
+      // @extend %flex-row;
       @include i.gap(4);
+
+      @include i.screenLg() {
+        display: flex;
+      }
     }
   }
 }
