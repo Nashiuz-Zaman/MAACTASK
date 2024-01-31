@@ -4,10 +4,18 @@ import PropTypes from "prop-types";
 // react icon
 import { AiOutlineClose } from "react-icons/ai";
 
+// styles
+import styles from "./MobileMenuCloseBtn.module.scss";
+
 const MobileMenuCloseBtn = ({ clickHandler }) => {
   return (
-    <button className="ml-auto w-max block mb-10" onClick={clickHandler}>
-      <AiOutlineClose className="text-3xl text-white"></AiOutlineClose>
+    <button
+      className={`${styles["mobile-menu-close-button"]}  w-max block mb-10`}
+      onClick={clickHandler}
+    >
+      <AiOutlineClose
+        className={styles["mobile-menu-close-button__icon"]}
+      ></AiOutlineClose>
     </button>
   );
 };
