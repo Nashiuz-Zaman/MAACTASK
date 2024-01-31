@@ -1,8 +1,19 @@
-export const homeTopBannerTextContent = {
+export const homeBannerContent = {
   heading: (
     <>
-      <span className="text-primary">Good Morning.</span>
+      Analytics that transform your <br /> product inside-out
     </>
   ),
-  description1: <>Ready to start your day at work?</>,
+  buttonsData: [
+    {
+      text: "Request for Demo",
+      colorTheme: "primary",
+      sizeTheme: "lg",
+    },
+    {
+      text: "Download",
+      colorTheme: "primary-alt",
+      sizeTheme: "lg",
+    },
+  ],
 };
