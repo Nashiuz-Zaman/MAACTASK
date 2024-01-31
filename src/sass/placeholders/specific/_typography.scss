@@ -1,4 +1,4 @@
-@use "../tools" as i;
+@use "./../../tools" as i;
 
 %font-light {
   font-weight: 300;
@@ -28,6 +28,14 @@
   font-weight: 900;
 }
 
+%text-textPrimary {
+  color: i.$textPrimary;
+}
+
 %text-textMediumLight {
   color: i.$textMediumLight;
+}
+
+%text-center {
+  text-align: center;
 }

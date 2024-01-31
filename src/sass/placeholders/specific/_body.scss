@@ -1,8 +1,9 @@
-@use "./../tools" as i;
+@use "./../../tools" as i;
 
 %body-default {
   @include i.leading(1);
-  @include i.max-w(120rem);
+  @include i.max-w("90rem");
+  @include i.mx("auto");
   font-weight: 400;
   color: i.$textMediumLight;
   font-family: i.$defaultFont;

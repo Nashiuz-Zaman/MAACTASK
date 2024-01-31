@@ -1,0 +1,21 @@
+@use "sass:math";
+
+@mixin max-w($size) {
+  @if type-of($size) == number {
+    max-width: #{math.div($size * 4, 16)}rem;
+  } @else if type-of($size) == string {
+    max-width: #{$size};
+  } @else {
+    @warn "Invalid argument";
+  }
+}
+
+@mixin h($size) {
+  @if type-of($size) == number {
+    height: #{math.div($size * 4, 16)}rem;
+  } @else if type-of($size) == string {
+    height: #{$size};
+  } @else {
+    @warn "Invalid argument";
+  }
+}

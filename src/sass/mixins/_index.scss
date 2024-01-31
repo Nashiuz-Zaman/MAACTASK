@@ -1,8 +1,9 @@
-@forward "./breakpoints";
-@forward "./pseudoElements";
-@forward "./element-size";
-@forward "./typography";
-@forward "./padding";
+@forward "./specific/breakpoints";
+@forward "./specific/pseudoElements";
+@forward "./specific/element-size";
+@forward "./specific/typography";
+@forward "./specific/spacing";
+@forward "./specific/border";
 
 // //transform mixins
 // @mixin position-center($position) {

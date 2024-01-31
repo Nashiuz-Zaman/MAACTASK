@@ -1,0 +1,9 @@
+@use "./../../tools" as i;
+
+%transition-all {
+  transition-property: all;
+}
+
+%duration-default {
+  transition-duration: i.$durationDefault;
+}

@@ -1,4 +1,4 @@
-@use "./../tools" as i;
+@use "./../../tools" as i;
 
 %shadow-primary {
   box-shadow: i.$shadowPrimary;

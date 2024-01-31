@@ -1,0 +1,3 @@
+@mixin border-b($size: 1px, $pattern: solid, $color) {
+  border-bottom: $size $pattern $color;
+}
