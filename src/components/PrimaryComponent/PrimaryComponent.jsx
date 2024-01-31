@@ -33,7 +33,7 @@ const PrimaryComponent = () => {
         theme="light"
       />
       {/* blur overlay in the page */}
-      <BackdropBlur openState={open} />
+      <BackdropBlur openState={false} />
 
       <RouterProvider router={router}></RouterProvider>
     </div>
