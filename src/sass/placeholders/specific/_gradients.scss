@@ -1,0 +1,9 @@
+@use "./../../tools" as i;
+
+%primary-gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    i.$primary,
+    i.$primaryDark
+  );
+}
