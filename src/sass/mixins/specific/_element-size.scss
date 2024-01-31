@@ -10,6 +10,16 @@
   }
 }
 
+@mixin w($size) {
+  @if type-of($size) == number {
+    width: #{math.div($size * 4, 16)}rem;
+  } @else if type-of($size) == string {
+    width: #{$size};
+  } @else {
+    @warn "Invalid argument";
+  }
+}
+
 @mixin h($size) {
   @if type-of($size) == number {
     height: #{math.div($size * 4, 16)}rem;
