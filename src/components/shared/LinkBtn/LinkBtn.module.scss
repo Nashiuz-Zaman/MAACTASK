@@ -16,6 +16,9 @@
 .base-btn {
   @include i.px(6);
   @include i.py(3);
+  @extend %text-sm;
+  @extend %font-medium;
+  line-height: 150%;
 }
 
 .primary-btn {

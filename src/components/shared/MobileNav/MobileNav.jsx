@@ -39,10 +39,6 @@ const MobileNav = ({ modifyClasses = "" }) => {
   // add escape key close functionality
   useEscapeClose(closeMobileNav);
 
-  // one single place for the link classes
-  const linkClasses =
-    "  hover:text-primaryLightest font-medium transition-all duration-200";
-
   return (
     //  mobile nav starts here
     <div className={styles["mobile-nav-container"]}>
