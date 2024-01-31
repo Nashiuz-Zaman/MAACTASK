@@ -1,0 +1,10 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.brand-logo {
+  @extend %w-max;
+
+  img {
+    @include i.h(12);
+  }
+}
