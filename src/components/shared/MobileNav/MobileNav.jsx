@@ -57,7 +57,7 @@ const MobileNav = ({ modifyClasses = "" }) => {
         <MobileMenuCloseBtn clickHandler={closeMobileNav} />
 
         {/* brand logo part */}
-        <BrandLogo imageSource={brandlogo} />
+        <BrandLogo imageSource={brandlogo} modifyClasses={`mx-auto`} />
 
         {/* regular part */}
         <ul className="flex flex-col gap-3">

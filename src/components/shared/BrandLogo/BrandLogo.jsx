@@ -13,7 +13,7 @@ const BrandLogo = ({
   imageModifyClasses = "",
 }) => {
   return (
-    <div className={`${styles["brand-logo"]}${modifyClasses}`}>
+    <div className={`${styles["brand-logo"]} ${modifyClasses}`}>
       <Link to="/">
         <img
           className={`${imageModifyClasses}`}
