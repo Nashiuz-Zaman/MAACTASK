@@ -1,0 +1,15 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.header {
+  @include i.border-b($color: #c2d2eb);
+
+  &__container {
+    @extend %flex-row, %justify-between, %items-center;
+
+    &__btn-container {
+      @extend %flex-row;
+      @include i.gap(4);
+    }
+  }
+}

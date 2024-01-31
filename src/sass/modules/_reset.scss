@@ -27,6 +27,5 @@ a {
   &:visited {
     @extend %block;
     text-decoration: none;
-    @extend %text-textPrimary;
   }
 }

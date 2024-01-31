@@ -9,9 +9,21 @@
 }
 
 %bg-primary {
-  background-color: i.$primary;
+  background: i.$primary;
+}
+
+%bg-primary-dark {
+  background-color: i.$primaryDark;
 }
 
 %border-primary {
   border-color: i.$primary;
+}
+
+%text-white {
+  color: #fff;
+}
+
+%bg-white {
+  background-color: #fff;
 }

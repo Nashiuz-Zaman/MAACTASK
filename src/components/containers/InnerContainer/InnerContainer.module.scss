@@ -2,9 +2,11 @@
 @use "./../../../sass/tools" as i;
 
 .inner-container {
-  @extend %w-full;
   @include i.px(3);
-  border: 1px solid black;
+  @include i.py(5);
+  @include i.max-w("90rem");
+  width: 100%;
+  @extend %mx-auto;
 
   @include i.screenXsm() {
     @include i.px(6);
@@ -20,6 +22,5 @@
 
   @include i.screenXl() {
     @include i.px(28);
-    @include i.py(5);
   }
 }

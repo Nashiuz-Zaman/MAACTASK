@@ -1,0 +1,63 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.link-btn-container {
+  a {
+    &:link,
+    &:visited {
+      @extend %transition-all,
+        %rounded-default,
+        %duration-default,
+        %text-center;
+    }
+  }
+}
+
+.base-btn {
+  @include i.px(6);
+  @include i.py(3);
+}
+
+.primary-btn {
+  a {
+    &:link,
+    &:visited {
+      background-color: i.$primary;
+      color: i.$white;
+    }
+
+    &:hover {
+      background-color: i.$primaryDark;
+    }
+  }
+}
+
+.primary-btn-alt {
+  @extend %relative;
+  z-index: 10;
+
+  a {
+    &:link,
+    &:visited {
+      background-color: i.$white;
+      color: i.$primary;
+      @include i.border($color: i.$primary);
+
+      &::before {
+        @extend %pseudo-reset;
+        @extend %absolute;
+        @extend %w-full;
+        @extend %h-full;
+        @extend %bg-primary;
+        @extend %rounded-default;
+        z-index: -1;
+        top: 2px;
+        left: 2px;
+      }
+    }
+
+    &:hover {
+      background-color: i.$lightGray;
+    }
+  }
+}
