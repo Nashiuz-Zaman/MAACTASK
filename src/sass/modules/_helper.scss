@@ -1,3 +1,21 @@
+@use "./../tools" as i;
+
 .mx-auto {
   margin-inline: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.font-medium {
+  font-weight: i.$font-medium;
+}
+
+.font-semibold {
+  font-weight: i.$font-semibold;
 }

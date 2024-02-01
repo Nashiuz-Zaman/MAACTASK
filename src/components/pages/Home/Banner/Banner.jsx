@@ -1,5 +1,6 @@
 // components
 import BannerText from "../../../shared/BannerText/BannerText";
+import BannerImage from "../../../shared/BannerImage/BannerImage";
 
 // data
 import { homeBannerContent } from "../../../../interfaceData/homeUiContent";
@@ -17,6 +18,7 @@ const Banner = () => {
       <BannerText heading={heading} btnData={buttonsData} />
 
       {/* banner image*/}
+      <BannerImage />
     </div>
   );
 };

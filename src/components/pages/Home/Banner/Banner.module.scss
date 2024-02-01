@@ -2,6 +2,10 @@
 @use "./../../../../sass/tools" as i;
 
 .banner {
-  @include i.py(41);
-  @include i.space-y("3.375rem");
+  @include i.py(30);
+  @include i.space-y(21);
+
+  @include i.screenMd {
+    @include i.py(41);
+  }
 }

@@ -2,15 +2,45 @@
 @use "./../../../sass/tools" as i;
 
 .banner-text {
-  @include i.space-y(12);
+  @include i.space-y(6);
+
+  @include i.screenMd() {
+    @include i.space-y(12);
+  }
 
   &__heading {
     @include i.leading(130%);
-    @extend %font-extrabold, %text-6xl, %text-textPrimary, %text-center;
+    @extend %font-extrabold,
+      %text-4xl,
+      %text-textPrimary,
+      %text-center,
+      %mx-auto;
+
+    @include i.screenSm() {
+      @include i.w("70%");
+    }
+
+    @include i.screen2md() {
+      font-size: i.$text-5xl;
+    }
+
+    @include i.screenLg() {
+      font-size: i.$text-5xl;
+      @include i.w("55rem");
+    }
+
+    @include i.screenXl() {
+      font-size: i.$text-6xl;
+    }
   }
 
   &__btn-container {
-    @extend %mx-auto, %w-max, %flex-row;
-    @include i.space-x(6);
+    @extend %mx-auto, %w-max, %flex-col, %items-center;
+    @include i.gap(4);
+
+    @include i.screenMd() {
+      flex-direction: row;
+      @include i.gap(6);
+    }
   }
 }

@@ -2,31 +2,31 @@
 
 // font weight
 %font-light {
-  font-weight: 300;
+  font-weight: i.$font-light;
 }
 
 %font-normal {
-  font-weight: 400;
+  font-weight: i.$font-normal;
 }
 
 %font-medium {
-  font-weight: 500;
+  font-weight: i.$font-medium;
 }
 
 %font-semibold {
-  font-weight: 600;
+  font-weight: i.$font-semibold;
 }
 
 %font-bold {
-  font-weight: 700;
+  font-weight: i.$font-bold;
 }
 
 %font-extrabold {
-  font-weight: 800;
+  font-weight: i.$font-extrabold;
 }
 
 %font-black {
-  font-weight: 900;
+  font-weight: i.$font-black;
 }
 
 // text color
@@ -43,20 +43,47 @@
   text-align: center;
 }
 
+%text-right {
+  text-align: right;
+}
+
+%text-left {
+  text-align: left;
+}
+
 // font size
 %text-sm {
-  font-size: 0.875rem;
+  font-size: i.$text-sm;
+}
+
+%text-base {
+  font-size: i.$text-base;
+}
+
+%text-lg {
+  font-size: i.$text-lg;
 }
 
 %text-xl {
-  font-size: 1.25rem;
+  font-size: i.$text-xl;
+}
+
+%text-2xl {
+  font-size: i.$text-2xl;
 }
 
 %text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: i.$text-3xl;
+}
+
+%text-4xl {
+  font-size: i.$text-4xl;
+}
+
+%text-5xl {
+  font-size: i.$text-5xl;
 }
 
 %text-6xl {
-  font-size: 3.625rem;
+  font-size: i.$text-6xl;
 }

@@ -1,0 +1,6 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.tertiary-heading {
+  @extend %text-primary, %text-xl;
+}
