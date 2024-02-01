@@ -123,3 +123,42 @@ export const aboutUsContent = {
     },
   ],
 };
+
+export const frequentlyAskedContent = [
+  {
+    id: 0,
+    question: "What kind of data can I see in FieldX?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 1,
+    question: "How do you take payments?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 2,
+    question: "Does Bizzy read my customers' data?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 3,
+    question: "Can I also track website analytics on fieldX?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 4,
+    question: "What's your refund and cancellation policy?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 5,
+    question: "What makes Bizzy different from other analytics tools?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+];

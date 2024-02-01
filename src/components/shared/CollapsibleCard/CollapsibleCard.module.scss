@@ -1,0 +1,35 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.collapsible-card {
+  @include i.p(8);
+  @extend %bg-white;
+  height: max-content;
+  border-radius: 16px;
+  line-height: 1.5 !important;
+
+  button {
+    @extend %flex-row, %w-full, %items-start, %justify-between, %text-left;
+
+    img {
+      @include i.w(6);
+      @extend %square, %transition-all, %duration-default;
+    }
+  }
+
+  &__question {
+    @extend %text-textPrimary, %text-xl;
+    font-size: 20px;
+    line-height: inherit;
+  }
+
+  &__content {
+    @include i.pt(5);
+    @extend %text-xl;
+    line-height: inherit;
+  }
+}
+
+.arrow-open {
+  transform: rotate(90deg);
+}

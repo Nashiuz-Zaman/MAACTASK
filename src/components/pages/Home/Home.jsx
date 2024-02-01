@@ -3,6 +3,7 @@ import InnerContainer from "./../../containers/InnerContainer/InnerContainer";
 import AboutUs from "./AboutUs/AboutUs";
 import Banner from "./Banner/Banner";
 import ProductFeatures from "./ProductFeatures/ProductFeatures";
+import Faq from "./Faq/Faq";
 
 const Home = () => {
   return (
@@ -18,9 +19,11 @@ const Home = () => {
       </section>
 
       <section>
-        <InnerContainer>
-          <AboutUs />
-        </InnerContainer>
+        <AboutUs />
+      </section>
+
+      <section>
+        <Faq />
       </section>
     </div>
   );

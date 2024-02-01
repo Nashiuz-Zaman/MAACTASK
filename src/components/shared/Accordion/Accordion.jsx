@@ -11,7 +11,7 @@ const Accordion = ({ children, expanded, modifyClasses = "" }) => {
         expanded ? styles["open"] : ""
       } ${modifyClasses}`}
     >
-      <div className={styles["accordion__container"]}> {children}</div>
+      <div className={styles["accordion__container"]}>{children}</div>
     </div>
   );
 };

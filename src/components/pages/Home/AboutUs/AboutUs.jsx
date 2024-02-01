@@ -10,6 +10,7 @@ import abstract from "./../../../../assets/abstract/about-us-abstract.png";
 
 // data
 import { aboutUsContent } from "../../../../interfaceData/homeUiContent";
+import InnerContainer from "../../../containers/InnerContainer/InnerContainer";
 
 const AboutUs = () => {
   const {
@@ -23,45 +24,47 @@ const AboutUs = () => {
       style={{
         background: `url(${abstract})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundPosition: "top center",
       }}
       className={styles["about-us"]}
     >
-      {/* main content */}
-      <div className={styles["about-us__content"]}>
-        {/* images */}
-        <div className={styles["about-us__content__img-container"]}>
-          <img
-            className={styles["about-us__content__img-container__dots"]}
-            src={dotpattern.imageSource}
-            alt={dotpattern.alt}
-          />
+      <InnerContainer>
+        {/* main content */}
+        <div className={styles["about-us__content"]}>
+          {/* images */}
+          <div className={styles["about-us__content__img-container"]}>
+            <img
+              className={styles["about-us__content__img-container__dots"]}
+              src={dotpattern.imageSource}
+              alt={dotpattern.alt}
+            />
 
-          <img
-            className={`${styles["about-us__content__img-container__topselling"]}`}
-            src={topselling.imageSource}
-            alt={topselling.alt}
-          />
+            <img
+              className={`${styles["about-us__content__img-container__topselling"]}`}
+              src={topselling.imageSource}
+              alt={topselling.alt}
+            />
 
-          <img
-            className={`${styles["about-us__content__img-container__preorder"]}`}
-            src={preorder.imageSource}
-            alt={preorder.alt}
-          />
+            <img
+              className={`${styles["about-us__content__img-container__preorder"]}`}
+              src={preorder.imageSource}
+              alt={preorder.alt}
+            />
 
-          <img
-            src={avg.imageSource}
-            alt={avg.alt}
-            className={`${styles["about-us__content__img-container__avg"]}`}
-          />
+            <img
+              src={avg.imageSource}
+              alt={avg.alt}
+              className={`${styles["about-us__content__img-container__avg"]}`}
+            />
+          </div>
+
+          {/* text content */}
+
+          <AboutUsText content={textContent} />
         </div>
 
-        {/* text content */}
-
-        <AboutUsText content={textContent} />
-      </div>
-
-      <OperationsData data={operationsData} />
+        <OperationsData data={operationsData} />
+      </InnerContainer>
     </div>
   );
 };
