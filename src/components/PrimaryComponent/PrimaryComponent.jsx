@@ -9,6 +9,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide } from "react-toastify";
 
+// redux
+import { useSelector } from "react-redux";
+
 // components
 import BackdropBlur from "../shared/BackdropBlur/BackdropBlur";
 
@@ -16,6 +19,8 @@ import BackdropBlur from "../shared/BackdropBlur/BackdropBlur";
 import styles from "./primaryComponent.module.scss";
 
 const PrimaryComponent = () => {
+  const { open } = useSelector((store) => store.backdrop);
+
   return (
     <div className={`${styles["primary-component"]}`}>
       {/* react toastify */}
@@ -33,7 +38,7 @@ const PrimaryComponent = () => {
         theme="light"
       />
       {/* blur overlay in the page */}
-      <BackdropBlur openState={false} />
+      <BackdropBlur openState={open} />
 
       <RouterProvider router={router}></RouterProvider>
     </div>
