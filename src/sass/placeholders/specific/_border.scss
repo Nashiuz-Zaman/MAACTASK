@@ -3,3 +3,11 @@
 %rounded-default {
   border-radius: i.$radiusDefault;
 }
+
+%rounded-default-lg {
+  border-radius: i.$radiusDefaultLg;
+}
+
+%rounded-full {
+  border-radius: 50%;
+}

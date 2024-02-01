@@ -43,6 +43,14 @@
   text-align: center;
 }
 
+%text-right {
+  text-align: right;
+}
+
+%text-left {
+  text-align: left;
+}
+
 // font size
 %text-sm {
   font-size: i.$text-sm;
