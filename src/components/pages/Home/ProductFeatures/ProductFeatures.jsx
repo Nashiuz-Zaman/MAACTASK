@@ -30,7 +30,7 @@ const ProductFeatures = () => {
 
           <SecondaryHeading
             text={secondaryHeading}
-            modifyClasses="text-center"
+            modifyClasses="text-center leading-150"
           />
         </div>
 

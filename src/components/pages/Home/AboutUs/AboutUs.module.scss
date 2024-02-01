@@ -1,0 +1,17 @@
+@use "./../../../../sass/tools" as i;
+@use "./../../../../sass/placeholders/index";
+
+.about-us {
+  @include i.pt("10.625rem");
+  @include i.pb(35);
+
+  &__content {
+    @extend %grid;
+    grid-template-columns: 3fr 4fr;
+    @include i.gap(42);
+
+    & > * {
+      @extend %w-full;
+    }
+  }
+}

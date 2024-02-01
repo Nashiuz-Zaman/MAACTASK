@@ -1,5 +1,6 @@
 // component
 import InnerContainer from "./../../containers/InnerContainer/InnerContainer";
+import AboutUs from "./AboutUs/AboutUs";
 import Banner from "./Banner/Banner";
 import ProductFeatures from "./ProductFeatures/ProductFeatures";
 
@@ -14,6 +15,12 @@ const Home = () => {
 
       <section>
         <ProductFeatures />
+      </section>
+
+      <section>
+        <InnerContainer>
+          <AboutUs />
+        </InnerContainer>
       </section>
     </div>
   );

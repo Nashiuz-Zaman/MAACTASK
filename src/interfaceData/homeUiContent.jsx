@@ -7,7 +7,7 @@ import centralPhone from "./../assets/home/centralphone2.webp";
 
 // about us images
 import avg from "./../assets/home/aboutus/avg.webp";
-import ceo from "./../assets/home/aboutus/ceo.webp";
+import ceo from "./../assets/home/aboutus/ceo.png";
 import dotpattern from "./../assets/home/aboutus/dotpattern.webp";
 import preorder from "./../assets/home/aboutus/preorder.webp";
 import topselling from "./../assets/home/aboutus/topselling.webp";

@@ -1,0 +1,31 @@
+@use "./../../../../../sass/tools" as i;
+@use "./../../../../../sass/placeholders/index";
+
+.about-us-text {
+  &__bottom-content {
+    @include i.space-y(10);
+
+    &__description {
+      @extend %text-xl;
+      @include i.pb(10);
+      border-bottom: 2px solid #d9d9d9;
+    }
+
+    &__ceoinfo {
+      @extend %flex-row, %items-start;
+      @include i.gap-x(12);
+      font-size: 1.375rem;
+
+      &__quote {
+        @extend %block, %font-medium;
+
+        @include i.pr("5.375rem");
+        @include i.mb(2);
+      }
+
+      &__designation {
+        @extend %font-bold, %text-textPrimary;
+      }
+    }
+  }
+}
