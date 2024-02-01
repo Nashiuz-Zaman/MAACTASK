@@ -2,8 +2,14 @@
 @use "./../../../../sass/placeholders/index";
 
 .product-features {
-  @include i.pt(25);
-  @include i.pb(35);
+  @include i.pt(17);
+  @include i.pb(27);
+
+  @include i.screenMd() {
+    @include i.pt(25);
+    @include i.pb(35);
+  }
+
   border-top: 1px solid #e1e1e1;
 
   &__top-headings {
@@ -12,8 +18,13 @@
 
   &__info {
     @extend %grid, %items-center;
-    grid-template-columns: 1fr 1.96fr 1fr;
-    @include i.gap("3.375rem");
+    grid-template-columns: 1fr;
+    @include i.gap("5rem");
+
+    @include i.screenLg() {
+      grid-template-columns: 1fr 1.96fr 1fr;
+      @include i.gap("3.375rem");
+    }
 
     > * {
       @extend %w-full;
@@ -28,17 +39,23 @@
         z-index: 3;
       }
 
+      // blue circle
       &::before {
         @extend %pseudo-reset,
-          %w-full,
           %square,
           %absolute,
           %bg-primary,
           %transform-center,
           %rounded-full;
         z-index: 1;
+        width: 35rem;
+
+        @include i.screenLg() {
+          width: 100%;
+        }
       }
 
+      // glow shadow
       &::after {
         @extend %pseudo-reset, %absolute;
         background: rgba(5, 44, 104, 0.2);
@@ -57,7 +74,7 @@
       &--left {
         @extend %text-center, %mx-auto;
 
-        @include i.screenMd {
+        @include i.screenLg {
           text-align: right;
           margin-left: auto;
           margin-right: 0;
@@ -67,7 +84,7 @@
       &--right {
         @extend %text-center, %mx-auto;
 
-        @include i.screenMd {
+        @include i.screenLg {
           text-align: left;
           margin-left: 0;
           margin-right: auto;

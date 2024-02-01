@@ -2,8 +2,13 @@
 @use "./../../../../sass/placeholders/index";
 
 .about-us {
-  @include i.pt("10.625rem");
-  @include i.pb(35);
+  @include i.pt(17);
+  @include i.pb(27);
+
+  @include i.screenMd() {
+    @include i.pt("10.625rem");
+    @include i.pb(35);
+  }
 
   &__content {
     @extend %flex-col-rev, %items-center;
@@ -14,7 +19,11 @@
     @include i.gap(42);
 
     & > * {
-      @extend %w-full;
+      width: 80%;
+
+      @include i.screenLg() {
+        width: 100%;
+      }
     }
 
     &__img-container {
@@ -23,10 +32,6 @@
       border-radius: 32px;
       background-color: #f1f6ff;
       width: 80%;
-
-      @include i.screenLg() {
-        width: 100%;
-      }
 
       &__dots {
         width: i.per(264, 440);
