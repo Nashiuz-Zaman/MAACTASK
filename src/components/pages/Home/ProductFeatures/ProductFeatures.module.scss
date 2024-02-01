@@ -48,7 +48,11 @@
           %transform-center,
           %rounded-full;
         z-index: 1;
-        width: 35rem;
+        width: 100%;
+
+        @include i.screenSm() {
+          width: 35rem;
+        }
 
         @include i.screenLg() {
           width: 100%;

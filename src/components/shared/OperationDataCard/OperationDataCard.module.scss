@@ -1,0 +1,21 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.operation-data-card {
+  @extend %flex-col, %items-center;
+  @include i.space-y(4);
+  line-height: 1.5;
+
+  img {
+    @extend %square;
+    @include i.w(12);
+  }
+
+  &__number-info {
+    @extend %text-primary, %text-4xl, %font-extrabold;
+  }
+
+  &__description {
+    @extend %text-2xl;
+  }
+}

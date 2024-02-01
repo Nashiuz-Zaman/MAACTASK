@@ -11,6 +11,10 @@ import ceo from "./../assets/home/aboutus/ceo.png";
 import dotpattern from "./../assets/home/aboutus/dotpattern.webp";
 import preorder from "./../assets/home/aboutus/preorder.webp";
 import topselling from "./../assets/home/aboutus/topselling.webp";
+import devices from "./../assets/home/aboutus/icons/monitor-mobile.png";
+import people from "./../assets/home/aboutus/icons/people.png";
+import user from "./../assets/home/aboutus/icons/user.png";
+import cup from "./../assets/home/aboutus/icons/cup.png";
 
 export const homeBannerContent = {
   heading: "Analytics that transform your product inside-out",
@@ -96,4 +100,65 @@ export const aboutUsContent = {
       alt: "Dot pattern",
     },
   },
+  operationsData: [
+    {
+      imageSource: devices,
+      numberInfo: "10+",
+      description: "Platforms Created",
+    },
+    {
+      imageSource: people,
+      numberInfo: "1559+",
+      description: "Total Users",
+    },
+    {
+      imageSource: user,
+      numberInfo: "10+",
+      description: "Total Clients",
+    },
+    {
+      imageSource: cup,
+      numberInfo: "300 Days",
+      description: "In Operations",
+    },
+  ],
 };
+
+export const frequentlyAskedContent = [
+  {
+    id: 0,
+    question: "What kind of data can I see in FieldX?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 1,
+    question: "How do you take payments?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 2,
+    question: "Does Bizzy read my customers' data?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 3,
+    question: "Can I also track website analytics on fieldX?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 4,
+    question: "What's your refund and cancellation policy?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+  {
+    id: 5,
+    question: "What makes Bizzy different from other analytics tools?",
+    answer:
+      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
+  },
+];

@@ -1,15 +1,19 @@
 import PropTypes from "prop-types";
 
+// styles
+import styles from "./BackdropBlur.module.scss";
+
 const BackdropBlur = ({
   openState = false,
   clickHandler = null,
   modifyClasses = "",
 }) => {
+  console.log(openState);
   return (
     <div
       onClick={clickHandler}
-      className={`fixed w-screen top-0 left-0 h-screen z-20 backdrop-blur-sm transition-all duration-default ${
-        openState ? "opacity-100 visible" : "opacity-0 collapse"
+      className={`${styles["backdrop-blur"]} ${
+        openState ? styles["open"] : ""
       } ${modifyClasses}`}
     ></div>
   );

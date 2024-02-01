@@ -15,7 +15,7 @@ function BannerText({ heading, btnData = [], modifyClasses = "" }) {
 
       {/* buttons */}
 
-      {btnData && btnData.length > 0 && (
+      {btnData?.length > 0 && (
         <div className={styles["banner-text__btn-container"]}>
           {btnData.map((btn, i) => {
             return <ButtonBtn key={i} {...btn} />;

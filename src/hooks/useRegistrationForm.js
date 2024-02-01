@@ -48,7 +48,7 @@ const useRegistrationForm = () => {
     const capitalLetterRegExp = /[A-Z]/;
     const specialCharsRegExp = /[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/;
 
-    if (password.length < 6) {
+    if (password?.length < 6) {
       passwordErrors.push("Passwords must be 6 characters");
     }
 
@@ -114,7 +114,7 @@ const useRegistrationForm = () => {
     const foundErrors = validateInputs(dataObject);
 
     // if there are errors return from here
-    if (foundErrors.length > 0) {
+    if (foundErrors?.length > 0) {
       dispatch(setRegistrationErrors(foundErrors));
       return;
     }

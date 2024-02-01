@@ -1,0 +1,20 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.backdrop-blur {
+  @extend %w-screen,
+    %fixed,
+    %top-left,
+    %h-screen,
+    %transition-all,
+    %duration-default;
+  opacity: 0;
+  visibility: collapse;
+  z-index: 20;
+  backdrop-filter: blur(4px);
+}
+
+.open {
+  visibility: visible !important;
+  opacity: 100 !important;
+}

@@ -12,11 +12,12 @@
 
   &__content {
     @extend %flex-col-rev, %items-center;
+    @include i.gap(42);
+
     @include i.screenLg() {
       display: grid;
       grid-template-columns: 3fr 4fr;
     }
-    @include i.gap(42);
 
     & > * {
       width: 80%;
