@@ -1,7 +1,78 @@
 @use "./../../../../sass/tools" as i;
+@use "./../../../../sass/placeholders/index";
 
 .product-features {
   @include i.pt(25);
-  @include i.pt(35);
+  @include i.pb(35);
   border-top: 1px solid #e1e1e1;
+
+  &__top-headings {
+    @include i.mb(20);
+  }
+
+  &__info {
+    @extend %grid, %items-center;
+    grid-template-columns: 1fr 1.96fr 1fr;
+    @include i.gap("3.375rem");
+
+    > * {
+      @extend %w-full;
+    }
+
+    &__img-container {
+      @extend %flex-row, %justify-center, %relative;
+      z-index: 2;
+
+      img {
+        @extend %relative;
+        z-index: 3;
+      }
+
+      &::before {
+        @extend %pseudo-reset,
+          %w-full,
+          %square,
+          %absolute,
+          %bg-primary,
+          %transform-center,
+          %rounded-full;
+        z-index: 1;
+      }
+
+      &::after {
+        @extend %pseudo-reset, %absolute;
+        background: rgba(5, 44, 104, 0.2);
+        filter: blur(38px);
+        top: -12px;
+        bottom: -12px;
+        left: 68px;
+        right: 68px;
+        z-index: 2;
+      }
+    }
+
+    &__features {
+      @include i.space-y(15);
+
+      &--left {
+        @extend %text-center, %mx-auto;
+
+        @include i.screenMd {
+          text-align: right;
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
+
+      &--right {
+        @extend %text-center, %mx-auto;
+
+        @include i.screenMd {
+          text-align: left;
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+    }
+  }
 }
