@@ -16,6 +16,13 @@ import people from "./../assets/home/aboutus/icons/people.png";
 import user from "./../assets/home/aboutus/icons/user.png";
 import cup from "./../assets/home/aboutus/icons/cup.png";
 
+// client images
+import aven from "./../assets/home/clients/aven.png";
+import amara from "./../assets/home/clients/amara.png";
+import circle from "./../assets/home/clients/circle.png";
+import kyan from "./../assets/home/clients/kyan.png";
+import treva from "./../assets/home/clients/treva.png";
+
 export const homeBannerContent = {
   heading: "Analytics that transform your product inside-out",
   buttonsData: [
@@ -162,3 +169,14 @@ export const frequentlyAskedContent = [
       "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate.",
   },
 ];
+
+export const clientsContent = {
+  heading: "5,000+ high-impact teams rely on Fieldx",
+  imagesData: [
+    { id: "aven", imageSource: aven },
+    { id: "amara", imageSource: amara },
+    { id: "circle", imageSource: circle },
+    { id: "kyan", imageSource: kyan },
+    { id: "treva", imageSource: treva },
+  ],
+};

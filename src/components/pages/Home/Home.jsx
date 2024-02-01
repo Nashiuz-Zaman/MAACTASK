@@ -4,6 +4,7 @@ import AboutUs from "./AboutUs/AboutUs";
 import Banner from "./Banner/Banner";
 import ProductFeatures from "./ProductFeatures/ProductFeatures";
 import Faq from "./Faq/Faq";
+import Clients from "./Clients/Clients";
 
 const Home = () => {
   return (
@@ -24,6 +25,12 @@ const Home = () => {
 
       <section>
         <Faq />
+      </section>
+
+      <section>
+        <InnerContainer>
+          <Clients />
+        </InnerContainer>
       </section>
     </div>
   );
