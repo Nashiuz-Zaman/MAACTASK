@@ -11,6 +11,10 @@ import ceo from "./../assets/home/aboutus/ceo.png";
 import dotpattern from "./../assets/home/aboutus/dotpattern.webp";
 import preorder from "./../assets/home/aboutus/preorder.webp";
 import topselling from "./../assets/home/aboutus/topselling.webp";
+import devices from "./../assets/home/aboutus/icons/monitor-mobile.png";
+import people from "./../assets/home/aboutus/icons/people.png";
+import user from "./../assets/home/aboutus/icons/user.png";
+import cup from "./../assets/home/aboutus/icons/cup.png";
 
 export const homeBannerContent = {
   heading: "Analytics that transform your product inside-out",
@@ -96,4 +100,26 @@ export const aboutUsContent = {
       alt: "Dot pattern",
     },
   },
+  operationsData: [
+    {
+      imageSource: devices,
+      numberInfo: "10+",
+      description: "Platforms Created",
+    },
+    {
+      imageSource: people,
+      numberInfo: "1559+",
+      description: "Total Users",
+    },
+    {
+      imageSource: user,
+      numberInfo: "10+",
+      description: "Total Clients",
+    },
+    {
+      imageSource: cup,
+      numberInfo: "300 Days",
+      description: "In Operations",
+    },
+  ],
 };

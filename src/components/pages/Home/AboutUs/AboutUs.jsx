@@ -3,6 +3,7 @@ import styles from "./AboutUs.module.scss";
 
 // component
 import AboutUsText from "./AboutUsText/AboutUsText";
+import OperationsData from "./OperationsData/OperationsData";
 
 // abstract
 import abstract from "./../../../../assets/abstract/about-us-abstract.png";
@@ -14,6 +15,7 @@ const AboutUs = () => {
   const {
     textContent,
     imagesData: { avg, topselling, preorder, dotpattern },
+    operationsData,
   } = aboutUsContent;
 
   return (
@@ -55,10 +57,11 @@ const AboutUs = () => {
         </div>
 
         {/* text content */}
-        <div>
-          <AboutUsText content={textContent} />
-        </div>
+
+        <AboutUsText content={textContent} />
       </div>
+
+      <OperationsData data={operationsData} />
     </div>
   );
 };

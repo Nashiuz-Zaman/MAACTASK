@@ -1,0 +1,22 @@
+@use "./../../../../../sass/tools" as i;
+@use "./../../../../../sass/placeholders/index";
+
+.operations-data {
+  @extend %grid;
+  @include i.mt("6rem");
+  justify-items: center;
+  grid-template-columns: 1fr;
+  @include i.gap-y(10);
+
+  @include i.screenXsm() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include i.screenMd() {
+    @include i.mt("11.3125rem");
+  }
+
+  @include i.screenLg() {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
