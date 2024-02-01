@@ -19,7 +19,9 @@
       &__quote {
         @extend %block, %font-medium;
 
-        @include i.pr("5.375rem");
+        @include i.screenLg() {
+          @include i.pr("5.375rem");
+        }
         @include i.mb(2);
       }
 

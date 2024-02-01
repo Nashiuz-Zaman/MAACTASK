@@ -11,7 +11,10 @@ import abstract from "./../../../../assets/abstract/about-us-abstract.png";
 import { aboutUsContent } from "../../../../interfaceData/homeUiContent";
 
 const AboutUs = () => {
-  const { textContent, imagesData } = aboutUsContent;
+  const {
+    textContent,
+    imagesData: { avg, topselling, preorder, dotpattern },
+  } = aboutUsContent;
 
   return (
     <div
@@ -25,7 +28,31 @@ const AboutUs = () => {
       {/* main content */}
       <div className={styles["about-us__content"]}>
         {/* images */}
-        <div></div>
+        <div className={styles["about-us__content__img-container"]}>
+          <img
+            className={styles["about-us__content__img-container__dots"]}
+            src={dotpattern.imageSource}
+            alt={dotpattern.alt}
+          />
+
+          <img
+            className={`${styles["about-us__content__img-container__topselling"]}`}
+            src={topselling.imageSource}
+            alt={topselling.alt}
+          />
+
+          <img
+            className={`${styles["about-us__content__img-container__preorder"]}`}
+            src={preorder.imageSource}
+            alt={preorder.alt}
+          />
+
+          <img
+            src={avg.imageSource}
+            alt={avg.alt}
+            className={`${styles["about-us__content__img-container__avg"]}`}
+          />
+        </div>
 
         {/* text content */}
         <div>
