@@ -1,6 +1,7 @@
 // component
 import InnerContainer from "./../../containers/InnerContainer/InnerContainer";
 import Banner from "./Banner/Banner";
+import ProductFeatures from "./ProductFeatures/ProductFeatures";
 
 const Home = () => {
   return (
@@ -9,6 +10,10 @@ const Home = () => {
         <InnerContainer>
           <Banner />
         </InnerContainer>
+      </section>
+
+      <section>
+        <ProductFeatures />
       </section>
     </div>
   );

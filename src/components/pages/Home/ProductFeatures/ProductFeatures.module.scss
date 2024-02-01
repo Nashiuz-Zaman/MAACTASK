@@ -1,0 +1,7 @@
+@use "./../../../../sass/tools" as i;
+
+.product-features {
+  @include i.pt(25);
+  @include i.pt(35);
+  border-top: 1px solid #e1e1e1;
+}
