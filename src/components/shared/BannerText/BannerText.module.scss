@@ -20,6 +20,10 @@
       @include i.w("70%");
     }
 
+    @include i.screen2md() {
+      font-size: i.$text-5xl;
+    }
+
     @include i.screenLg() {
       font-size: i.$text-5xl;
       @include i.w("55rem");
