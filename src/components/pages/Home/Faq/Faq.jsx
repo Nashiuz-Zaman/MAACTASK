@@ -31,7 +31,7 @@ const Faq = () => {
         />
 
         <div className={styles["faq__questions-answers"]}>
-          {frequentlyAskedContent.length > 0 &&
+          {frequentlyAskedContent?.length > 0 &&
             frequentlyAskedContent.map((question, i) => {
               return <CollapsibleCard key={i} content={question} />;
             })}

@@ -73,7 +73,7 @@ const useLoginForm = () => {
     const foundErrors = validateInputs(dataObject);
 
     // if there are erros return from here
-    if (foundErrors.length > 0) {
+    if (foundErrors?.length > 0) {
       dispatch(setLoginErrors(foundErrors));
       return;
     }

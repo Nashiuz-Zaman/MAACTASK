@@ -9,8 +9,7 @@ import styles from "./OperationsData.module.scss";
 const OperationsData = ({ data, modifyClasses = "" }) => {
   return (
     <div className={`${styles["operations-data"]} ${modifyClasses}`}>
-      {data &&
-        data.length > 0 &&
+      {data?.length > 0 &&
         data.map((singleData, i) => {
           return <OperationDataCard key={i} operationData={singleData} />;
         })}
