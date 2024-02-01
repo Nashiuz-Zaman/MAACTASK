@@ -43,3 +43,9 @@
 .text-white {
   color: i.$white;
 }
+
+.footer-logo {
+  img {
+    height: i.toRem(63.8);
+  }
+}

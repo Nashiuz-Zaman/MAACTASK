@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 
 // components
 import Header from "./../shared/Header/Header";
+import Footer from "../shared/Footer/Footer";
 
 // abstract image
 import blueAbstract from "./../../assets/abstract/blue-abstract.webp";
@@ -18,6 +19,7 @@ function RootLayout() {
     >
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 }
