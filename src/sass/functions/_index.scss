@@ -1,0 +1,3 @@
+@function per($target, $total) {
+  @return #{percentage($target / $total)};
+}

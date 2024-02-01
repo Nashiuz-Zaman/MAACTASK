@@ -1,0 +1,65 @@
+@use "./../../../../sass/tools" as i;
+@use "./../../../../sass/placeholders/index";
+
+.about-us {
+  @include i.pt(17);
+  @include i.pb(27);
+
+  @include i.screenMd() {
+    @include i.pt("10.625rem");
+    @include i.pb(35);
+  }
+
+  &__content {
+    @extend %flex-col-rev, %items-center;
+    @include i.screenLg() {
+      display: grid;
+      grid-template-columns: 3fr 4fr;
+    }
+    @include i.gap(42);
+
+    & > * {
+      width: 80%;
+
+      @include i.screenLg() {
+        width: 100%;
+      }
+    }
+
+    &__img-container {
+      @extend %relative, %flex-row, %justify-center, %items-center, %mx-auto;
+      aspect-ratio: 0.91/1;
+      border-radius: 32px;
+      background-color: #f1f6ff;
+      width: 80%;
+
+      &__dots {
+        width: i.per(264, 440);
+      }
+
+      &__topselling {
+        @extend %absolute, %shadow-primary;
+        width: i.per(235, 440);
+        bottom: -#{i.per(38, 486)};
+        left: -#{i.per(22, 440)};
+        border-radius: 16px;
+      }
+
+      &__preorder {
+        @extend %absolute, %shadow-primary;
+        width: i.per(237.5, 440);
+        top: -#{i.per(64, 486)};
+        left: i.per(104, 440);
+        border-radius: 16px;
+      }
+
+      &__avg {
+        @extend %absolute, %shadow-primary;
+        width: i.per(216, 440);
+        border-radius: 16px;
+        right: -#{i.per(22, 440)};
+        bottom: #{i.per(76, 486)};
+      }
+    }
+  }
+}

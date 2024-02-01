@@ -3,6 +3,8 @@
 
 .secondary-heading {
   @extend %text-textPrimary, %font-extrabold;
-  line-height: 150%;
-  font-size: i.$text-5xl;
+
+  @include i.screen2md() {
+    font-size: i.$text-5xl;
+  }
 }
