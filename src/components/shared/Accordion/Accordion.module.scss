@@ -1,0 +1,16 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.accordion {
+  @extend %grid, %transition-all, %duration-default;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0fr;
+
+  &__container {
+    @extend %overflow-hidden;
+  }
+}
+
+.open {
+  grid-template-rows: 1fr;
+}
