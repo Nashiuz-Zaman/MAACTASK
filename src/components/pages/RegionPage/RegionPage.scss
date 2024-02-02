@@ -1,0 +1,19 @@
+@use "./../../../sass/tools" as i;
+@use "./../../../sass/placeholders/index";
+
+.region-page {
+  padding-top: i.toRem(35);
+  padding-left: i.toRem(40);
+  padding-right: i.toRem(24);
+
+  &__top-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+
+    h3 {
+      width: max-content;
+    }
+  }
+}

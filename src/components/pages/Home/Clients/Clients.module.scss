@@ -1,0 +1,27 @@
+@use "./../../../../sass/placeholders/index";
+@use "./../../../../sass/tools" as i;
+
+.clients {
+  @include i.py(17);
+
+  @include i.screenMd() {
+    @include i.py(35);
+  }
+
+  &__heading {
+    @extend %text-primary, %text-center;
+    font-size: i.toRem(32);
+    @include i.mb(16);
+  }
+
+  &__img-container {
+    @extend %flex-row, %items-center, %justify-center;
+    flex-wrap: wrap;
+    @include i.gap-x("5.575rem");
+    @include i.gap-y("4rem");
+
+    img {
+      @include i.h(12);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.footer {
+  @include i.pt(22);
+  @include i.pb(17);
+  @extend %bg-primary-dark;
+  line-height: 1.5;
+  @include i.mt("auto");
+
+  &__container {
+    @include i.pb(22);
+    @include i.space-y(8);
+    border-bottom: 1px solid #0d3166;
+
+    &__description {
+      @extend %text-white,
+        %w-full,
+        %text-base,
+        %text-center,
+        %mx-auto,
+        %font-medium;
+
+      @include i.screenMd() {
+        width: 60%;
+      }
+
+      @include i.screen2md() {
+        width: i.toRem(490);
+      }
+    }
+
+    &__social-media {
+      @extend %flex-row, %w-max, %mx-auto;
+      @include i.gap-x(10);
+    }
+  }
+
+  small {
+    @extend %block, %w-full, %text-white, %text-center, %font-bold;
+    @include i.mt(10);
+    font-size: i.toRem(18);
+
+    span {
+      color: #f60e0e;
+    }
+  }
+}

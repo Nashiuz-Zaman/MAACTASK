@@ -2,17 +2,11 @@
 import axios from "axios";
 
 // server url
-import { serverUrl } from "../data/serverUrl";
+import { serverUrl } from "./../interfaceData/serverUrl";
 
 const axiosCustom = axios.create({
   baseURL: serverUrl,
-  withCredentials: true,
 });
-
-// const axiosSecure = axios.create({
-//   baseURL: serverUrl,
-//   withCredentials: true
-// });
 
 const useAxios = () => {
   return { axiosCustom };

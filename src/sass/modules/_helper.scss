@@ -43,3 +43,24 @@
 .text-white {
   color: i.$white;
 }
+
+.footer-logo {
+  img {
+    height: i.toRem(63.8);
+  }
+}
+
+.active {
+  color: i.$primary !important;
+}
+
+.create-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  background-color: #0b2e4e;
+  color: i.$white;
+}
+
+.w-max {
+  width: max-content;
+}

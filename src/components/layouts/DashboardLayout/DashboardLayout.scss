@@ -1,0 +1,15 @@
+@use "./../../../sass/tools" as i;
+@use "./../../../sass/placeholders/index";
+
+.dashboard-layout {
+  @extend %flex-col;
+  flex-grow: 1;
+  background-color: #f8f8fb;
+
+  &__inner-content {
+    flex-grow: 1;
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: i.toRem(252) 1fr;
+  }
+}
