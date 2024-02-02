@@ -1,0 +1,129 @@
+@use "./../../../sass/tools" as i;
+@use "./../../../sass/placeholders/index";
+
+$formCommonColor: #898989;
+
+.form-container {
+  max-width: i.toRem(1024);
+  @extend %w-full, %bg-white, %mx-auto;
+  @include i.px(10);
+  @include i.py(10);
+
+  @include i.screenMd() {
+    @include i.px(20);
+    @include i.py(15);
+  }
+
+  @include i.screenLg() {
+    padding: i.toRem(80) i.toRem(208);
+  }
+
+  margin-block: i.toRem(112);
+  border-radius: i.toRem(32);
+
+  &__heading {
+    @extend %text-center;
+    @include i.mb(4);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__description {
+    font-size: i.toRem(24);
+    @extend %font-light, %text-center;
+    @include i.mb(12);
+  }
+
+  &__form {
+    @include i.space-y(10);
+
+    &__input {
+      @extend %block, %w-full;
+      appearance: none;
+      color: $formCommonColor;
+      border: none;
+      border-bottom: 1px solid #e1e1e1;
+      @include i.pb(6);
+      font-family: inherit;
+      font-size: i.toRem(20);
+      outline: none;
+
+      &::placeholder {
+        font-size: inherit;
+        color: $formCommonColor;
+        font-family: inherit;
+      }
+    }
+
+    select {
+      @extend %block;
+      border: none;
+      background-image: none;
+      font-family: inherit;
+      color: $formCommonColor;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      @include i.pb(6);
+      border-bottom: 1px solid #e1e1e1;
+      margin-bottom: i.toRem(40);
+
+      * {
+        border: none !important;
+        outline: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__alternative {
+      @extend %text-textPrimary, %font-medium, %text-center;
+      font-size: i.toRem(24);
+      line-height: 1.5;
+
+      a {
+        &:link,
+        &:visited {
+          @extend %inline-block, %text-primary;
+        }
+      }
+    }
+  }
+}
+
+.checkbox-container {
+  @extend %flex-row, %items-center;
+  gap: i.toRem(16);
+  @include i.mb(12);
+
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  a {
+    &:link,
+    &:visited {
+      display: inline;
+      @extend %text-primary;
+    }
+  }
+
+  &__checkbox {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: solid 1px #000;
+    background-color: #fff;
+  }
+}
+
+.form-btn {
+  button {
+    width: 100%;
+  }
+}

@@ -1,7 +1,9 @@
+@use "sass:math";
+
 @function per($target, $total) {
-  @return #{percentage($target / $total)};
+  @return #{percentage(math.div($target, $total))};
 }
 
 @function toRem($size) {
-  @return #{$size / 16}rem;
+  @return #{math.div($size, 16)}rem;
 }
