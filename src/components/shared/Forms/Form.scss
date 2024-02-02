@@ -21,6 +21,14 @@ $formCommonColor: #898989;
   margin-block: i.toRem(112);
   border-radius: i.toRem(32);
 
+  &__errors {
+    &__error-message {
+      line-height: 1.5;
+      @extend %font-semibold;
+      color: #ff0000;
+    }
+  }
+
   &__heading {
     @extend %text-center;
     @include i.mb(4);

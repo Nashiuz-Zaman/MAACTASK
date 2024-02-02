@@ -9,9 +9,7 @@ import styles from "./ButtonBtn.module.scss";
 
 const ButtonBtn = ({
   text,
-  onClick = () => {
-    console.log("Button currently does nothing");
-  },
+  onClick,
   colorTheme = "primary",
   modifyClasses = "",
   // loading = false,

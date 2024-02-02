@@ -10,15 +10,13 @@ import SecondaryHeading from "./../SecondaryHeading/SecondaryHeading";
 
 // styles
 import "./Form.scss";
-import { useState } from "react";
+
+// hooks
+import useRegistrationForm from "../../../hooks/useRegistrationForm";
 
 const RegistrationForm = ({ modifyClasses }) => {
-  // const { registrationErrors, handleSubmit } = useRegistrationForm();
-  const [agreed, setAgreed] = useState(false);
-
-  const handleAgreeCheck = () => {
-    setAgreed((prev) => !prev);
-  };
+  const { agreed, handleAgreeCheck, handleSubmit, registrationErrors } =
+    useRegistrationForm();
 
   const inputClasses = "form-container__form__input";
 
@@ -34,7 +32,7 @@ const RegistrationForm = ({ modifyClasses }) => {
       </p>
 
       {/* form */}
-      <form className="form-container__form" onSubmit={null}>
+      <form className="form-container__form" onSubmit={handleSubmit}>
         <input
           className={inputClasses}
           name="name"
@@ -104,20 +102,20 @@ const RegistrationForm = ({ modifyClasses }) => {
         </div>
 
         {/* show errors here */}
-        {/* {registrationErrors?.length > 0 && (
-            <div className="space-y-1 mt-4">
-              {registrationErrors.map((error) => {
-                return (
-                  <p
-                    key={error}
-                    className="text-sm text-center font-semibold text-red-600"
-                  >
-                    * {error}
-                  </p>
-                );
-              })}
-            </div>
-          )} */}
+        {registrationErrors?.length > 0 && (
+          <div className="form-container__errors">
+            {registrationErrors.map((error) => {
+              return (
+                <p
+                  key={error}
+                  className="form-container__errors__error-message"
+                >
+                  *Error: {error}
+                </p>
+              );
+            })}
+          </div>
+        )}
 
         {/* submit button */}
         <ButtonBtn
