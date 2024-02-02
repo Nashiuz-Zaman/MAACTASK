@@ -3,7 +3,6 @@
 
 .dashboard-container {
   max-width: i.toRem(1920);
-  @extend %w-full, %mx-auto;
-  background-color: #f8f8fb;
-  @extend %min-h-screen;
+  @extend %w-full, %mx-auto, %flex-col;
+  flex-grow: 1;
 }

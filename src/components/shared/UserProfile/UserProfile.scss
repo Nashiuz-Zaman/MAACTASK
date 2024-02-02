@@ -4,12 +4,35 @@
 .user-profile {
   @extend %flex-row, %items-center;
   @include i.gap(2);
-  padding-right: i.toRem(24);
+  position: relative;
 
   button {
     img {
       @extend %square;
       height: i.toRem(20);
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    visibility: collapse;
+    transform: translateY(110%);
+    @extend %shadow-medium, %bg-white, %rounded-default;
+    padding: 2rem;
+    transition: all i.$durationDefault ease-in;
+
+    a:link,
+    a:visited {
+      width: max-content;
+      @extend %text-primary;
+    }
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

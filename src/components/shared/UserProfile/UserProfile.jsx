@@ -8,6 +8,7 @@ import chevronDown from "./../../../assets/dashboard/chevron-down.svg";
 
 // scss
 import "./UserProfile.scss";
+import { Link } from "react-router-dom";
 
 const UserProfile = ({ profileData }) => {
   // hover state
@@ -32,7 +33,7 @@ const UserProfile = ({ profileData }) => {
 
       <p className="user-profile__name">{name ? name : "No user"}</p>
 
-      <button>
+      <button onClick={handleShowInfoPanel}>
         <img src={chevronDown} alt="arrow-down" />
       </button>
 
@@ -41,7 +42,9 @@ const UserProfile = ({ profileData }) => {
         className={`user-profile__panel ${
           panelOpen ? "user-profile__panel--open" : ""
         }`}
-      ></div>
+      >
+        <Link to="/">Go to Home</Link>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 //  hooks
 import useAxios from "./../hooks/useAxios";
+import { useNavigate } from "react-router";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +17,7 @@ const useLoginForm = () => {
   const dispatch = useDispatch();
   const { loginErrors } = useSelector((store) => store.auth);
   const { showToast } = useToast();
+  const navigate = useNavigate();
 
   // axios extraction
   const { axiosCustom } = useAxios();
@@ -39,6 +41,7 @@ const useLoginForm = () => {
         showToast("Successfully Logged In", "success");
         form.reset();
         localStorage.setItem("token", res.data.token);
+        navigate("/dashboard/region/");
       }
     } catch (error) {
       console.log(error);
