@@ -8,7 +8,6 @@ const BackdropBlur = ({
   clickHandler = null,
   modifyClasses = "",
 }) => {
-  console.log(openState);
   return (
     <div
       onClick={clickHandler}
