@@ -6,6 +6,7 @@
   @include i.pb(17);
   @extend %bg-primary-dark;
   line-height: 1.5;
+  @include i.mt("auto");
 
   &__container {
     @include i.pb(22);

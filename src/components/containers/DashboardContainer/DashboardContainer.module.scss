@@ -1,0 +1,9 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.dashboard-container {
+  max-width: i.toRem(1920);
+  @extend %w-full, %mx-auto;
+  background-color: #f8f8fb;
+  @extend %min-h-screen;
+}

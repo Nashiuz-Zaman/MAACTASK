@@ -1,0 +1,11 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.dashboard-header {
+  padding-block: i.toRem(12);
+  padding-left: i.toRem(75);
+  box-shadow: 0 10px 20px 0 rgba(18, 38, 63, 0.03);
+  background-color: #fff;
+
+  @extend %flex-row, %justify-between, %items-center;
+}

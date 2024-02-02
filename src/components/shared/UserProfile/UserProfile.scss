@@ -1,0 +1,15 @@
+@use "./../../../sass/placeholders/index";
+@use "./../../../sass/tools" as i;
+
+.user-profile {
+  @extend %flex-row, %items-center;
+  @include i.gap(2);
+  padding-right: i.toRem(24);
+
+  button {
+    img {
+      @extend %square;
+      height: i.toRem(20);
+    }
+  }
+}
