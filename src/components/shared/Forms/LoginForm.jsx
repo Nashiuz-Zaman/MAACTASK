@@ -8,10 +8,14 @@ import { Link } from "react-router-dom";
 import ButtonBtn from "./../ButtonBtn/ButtonBtn";
 import SecondaryHeading from "./../SecondaryHeading/SecondaryHeading";
 
+// hooks
+import useLoginForm from "../../../hooks/useLoginForm";
+
 // styles
 import "./Form.scss";
 
 const LoginForm = ({ modifyClasses }) => {
+  const { handleSubmit, loginErrors } = useLoginForm();
   const inputClasses = "form-container__form__input";
 
   return (
@@ -26,7 +30,7 @@ const LoginForm = ({ modifyClasses }) => {
       </p>
 
       {/* form */}
-      <form className="form-container__form" onSubmit={null}>
+      <form className="form-container__form" onSubmit={handleSubmit}>
         <input
           className={inputClasses}
           type="email"
@@ -44,26 +48,26 @@ const LoginForm = ({ modifyClasses }) => {
         />
 
         {/* show errors here */}
-        {/* {registrationErrors?.length > 0 && (
-            <div className="space-y-1 mt-4">
-              {registrationErrors.map((error) => {
-                return (
-                  <p
-                    key={error}
-                    className="text-sm text-center font-semibold text-red-600"
-                  >
-                    * {error}
-                  </p>
-                );
-              })}
-            </div>
-          )} */}
+        {loginErrors?.length > 0 && (
+          <div className="form-container__errors">
+            {loginErrors.map((error) => {
+              return (
+                <p
+                  key={error}
+                  className="form-container__errors__error-message"
+                >
+                  *Error: {error}
+                </p>
+              );
+            })}
+          </div>
+        )}
 
         {/* submit button */}
         <ButtonBtn text="Sign in" sizeTheme="lg" modifyClasses="form-btn" />
 
         <p className="form-container__form__alternative">
-          Don&apos;t have any account? <Link to={"/login"}>Sign Up</Link>
+          Don&apos;t have any account? <Link to={"/registration"}>Sign Up</Link>
         </p>
       </form>
     </div>

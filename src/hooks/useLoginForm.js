@@ -1,121 +1,55 @@
-// react router dom imports
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-
-// custom hook
-import useAxios from "./useAxios";
-import useToast from "./useToast";
-import useFirebaseMethods from "./useFirebaseMethods";
+//  hooks
+import useAxios from "./../hooks/useAxios";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../features/auth/authSlice";
 
-// api endpoints
-import { userAuthEndpoint } from "../data/apiData";
+// hook
+import useToast from "./useToast";
 
-const { setUserShouldExist, setProfileData, setLoginErrors, setAppLoading } =
-  authActions;
+const { setLoginErrors, setProfileData } = authActions;
 
+// custom hook body starts here
 const useLoginForm = () => {
   // extract functions from auth context
-  const { loginErrors } = useSelector((store) => store.auth);
-  const { loginEmail } = useFirebaseMethods();
   const dispatch = useDispatch();
-
-  // react toastify
+  const { loginErrors } = useSelector((store) => store.auth);
   const { showToast } = useToast();
 
-  // axios
+  // axios extraction
   const { axiosCustom } = useAxios();
 
-  // create the navigation function
-  const navigate = useNavigate();
-
-  // extract state value from use location hook
-  const { state } = useLocation();
-
-  const validateInputs = (inputs) => {
-    const { email, password } = inputs;
-    const emailRegex = /[a-z0-9._]+@[a-z0-9]+.[a-z]+/g;
-
-    const foundErrors = [];
-
-    if (email === "") {
-      foundErrors.push("Must provide an email address");
-    } else if (!emailRegex.test(email)) {
-      foundErrors.push("Must provide a valid email address");
-    }
-
-    if (password === "") {
-      foundErrors.push("Must provide a password");
-    }
-
-    return foundErrors;
-  };
-
-  // handle normal login
-  const handleLoginEmail = async (e) => {
+  // function to run when the form is submitted
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // reset errors
     dispatch(setLoginErrors([]));
 
     const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-
-    const dataObject = {
-      email,
-      password,
-    };
-
-    const foundErrors = validateInputs(dataObject);
-
-    // if there are erros return from here
-    if (foundErrors?.length > 0) {
-      dispatch(setLoginErrors(foundErrors));
-      return;
-    }
-
     try {
-      // firebase login api call
-      const result = await loginEmail(dataObject.email, dataObject.password);
+      const data = {
+        employeeId: form.email.value,
+        password: form.password.value,
+      };
 
-      //  if firebase login is successful, check database for profile data
-      if (result.user) {
-        const loginResponse = await axiosCustom.post(userAuthEndpoint, {
-          email: result.user.email,
-        });
+      const res = await axiosCustom.post("/users/login", data);
 
-        if (loginResponse.data.success) {
-          dispatch(setProfileData(loginResponse.data.user));
-          dispatch(setUserShouldExist(true));
-
-          // set profile and the jwt token in the localstorage
-          localStorage.setItem("tokenExists", loginResponse.data.tokenExists);
-
-          // send them where they were previously going
-          if (state) {
-            navigate(state);
-          } else {
-            navigate("/");
-          }
-          showToast("Logged In Successfully", "success");
-          dispatch(setAppLoading(false));
-        }
+      if (res.data.status === "success") {
+        dispatch(setProfileData(res.data.user));
+        showToast("Successfully Logged In", "success");
+        form.reset();
+        localStorage.setItem("token", res.data.token);
       }
     } catch (error) {
-      dispatch(setLoginErrors(["Email/Password doesn't match. Try again."]));
-      dispatch(setAppLoading(false));
+      console.log(error);
+      dispatch(setLoginErrors([error.response.data.message]));
     }
   };
 
   return {
-    dispatch,
     loginErrors,
     setLoginErrors,
-    handleLoginEmail,
+    handleSubmit,
   };
 };
 

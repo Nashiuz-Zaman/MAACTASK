@@ -3,6 +3,7 @@ import { useState } from "react";
 
 //  hooks
 import useAxios from "./../hooks/useAxios";
+import useToast from "./useToast";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +15,7 @@ const { setRegistrationErrors } = authActions;
 const useRegistrationForm = () => {
   // checkbox state
   const [agreed, setAgreed] = useState(false);
+  const { showToast } = useToast();
 
   // extract functions from auth context
   const dispatch = useDispatch();
@@ -49,6 +51,7 @@ const useRegistrationForm = () => {
       if (agreed) {
         const res = await axiosCustom.post("/users/signup", data);
         if (res.data.status === "success") {
+          showToast("Successful Registration", "success");
           form.reset();
           localStorage.setItem("token", res.data.token);
         }
